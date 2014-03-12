@@ -2,7 +2,7 @@
 
 galaxy_info:
   author: pjan vandaele
-  description: Install (a) Scala version(s)
+  description: Install Scala version(s)
   min_ansible_version: 1.4
   license: MIT
   platforms:
@@ -11,5 +11,7 @@ galaxy_info:
     - all
   categories:
   - system
+  - development
 
-dependencies: []
+dependencies:
+  - Ansibles.oracle-jdk

@@ -4,6 +4,7 @@ Ansible role that installs Scala.
 
 #### Requirements & Dependencies
 - Tested on Ansible 1.4 or higher
+- Requires JDK > 7 to be installed (only tested with Oracle JDK 7 for now)
 
 #### Variables
 
