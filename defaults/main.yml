@@ -1,0 +1,6 @@
+# file: scala/defaults/main.yml
+
+scala_versions:
+  - "2.10.3"
+
+scala_default_version: "2.10.3"
