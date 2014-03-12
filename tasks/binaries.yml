@@ -1,9 +1,9 @@
 # file: scala/tasks/binaries.yml
 
-- name: Scala | Download Scala
+- name: Scala | Download Scala version(s)
   get_url:
     url: "http://www.scala-lang.org/files/archive/scala-{{item}}.tgz"
-    dest: "/tmp"
+    dest: "/tmp/scala-{{item}}.tgz"
   with_items: scala_versions
 
 - name: Scala | Make sure the directory to hold the Scala binaries is present

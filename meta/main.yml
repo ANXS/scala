@@ -2,7 +2,7 @@
 
 galaxy_info:
   author: pjan vandaele
-  description: Install Scala version(s)
+  description: Install Scala version(s) and sbt
   min_ansible_version: 1.4
   license: MIT
   platforms:
