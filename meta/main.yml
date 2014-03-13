@@ -12,6 +12,7 @@ galaxy_info:
   categories:
   - system
   - development
+  - 'programming languages'
 
 dependencies:
   - Ansibles.oracle-jdk
