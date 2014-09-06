@@ -2,7 +2,7 @@
 
 galaxy_info:
   author: pjan vandaele
-  company: Ansibles
+  company: ANXS
   description: Install Scala version(s) and sbt
   min_ansible_version: 1.4
   license: MIT
@@ -15,4 +15,4 @@ galaxy_info:
   - development
 
 dependencies:
-  - Ansibles.oracle-jdk
+  - ANXS.oracle-jdk

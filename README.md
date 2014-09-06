@@ -1,4 +1,4 @@
-## Ansibles - Scala [![Build Status](https://travis-ci.org/Ansibles/scala.png)](https://travis-ci.org/Ansibles/scala)
+## ANXS - Scala [![Build Status](https://travis-ci.org/ANXS/scala.png)](https://travis-ci.org/ANXS/scala)
 
 Ansible role which installs [Scala](http://scala-lang.org/) and [sbt](http://www.scala-sbt.org/).
 
@@ -24,4 +24,4 @@ Licensed under the MIT License. See the LICENSE file for details.
 
 #### Feedback, bug-reports, requests, ...
 
-Are [welcome](https://github.com/ansibles/scala/issues)!
+Are [welcome](https://github.com/ANXS/scala/issues)!
