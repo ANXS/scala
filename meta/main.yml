@@ -13,6 +13,3 @@ galaxy_info:
   categories:
   - system
   - development
-
-dependencies:
-  - ANXS.oracle-jdk
