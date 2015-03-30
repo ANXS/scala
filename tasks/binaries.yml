@@ -42,16 +42,41 @@
     - regexp: "^PATH=.*SCALA_HOME.*"
       line: "PATH=$PATH:$SCALA_HOME/bin"
 
+- name: Scala | Check alternatives for scala
+  command: update-alternatives --query scala
+  register: scala_alternatives
+  changed_when: false
+
+- name: Scala | Check alternatives for scalac
+  command: update-alternatives --query scalac
+  register: scalac_alternatives
+  changed_when: false
+
+- name: Scala | Check alternatives for scalap
+  command: update-alternatives --query scalap
+  register: scalap_alternatives
+  changed_when: false
+
 - name: Scala | Inform the system where Scala is located
-  command: "{{item}}"
-  with_items:
-    - update-alternatives --install "/usr/bin/scala" "scala" "/usr/local/scala/default/bin/scala" 1
-    - update-alternatives --install "/usr/bin/scalac" "scalac" "/usr/local/scala/default/bin/scalac" 1
-    - update-alternatives --install "/usr/bin/scalap" "scalap" "/usr/local/scala/default/bin/scalap" 1
+  command: "update-alternatives --install '/usr/bin/scala' 'scala' '/usr/local/scala/default/bin/scala' 1"
+  when: '"/usr/local/scala/default/bin/scala" not in scala_alternatives.stdout'
+
+- name: Scala | Inform the system where Scalac is located
+  command: "update-alternatives --install '/usr/bin/scalac' 'scalac' '/usr/local/scala/default/bin/scalac' 1"
+  when: '"/usr/local/scala/default/bin/scalac" not in scalac_alternatives.stdout'
+
+- name: Scala | Inform the system where Scalap is located
+  command: "update-alternatives --install '/usr/bin/scalap' 'scalap' '/usr/local/scala/default/bin/scalap' 1"
+  when: '"/usr/local/scala/default/bin/scalap" not in scalap_alternatives.stdout'
 
 - name: Scala | Set the system default for Scala
-  command: "{{item}}"
-  with_items:
-    - update-alternatives --set scala /usr/local/scala/default/bin/scala
-    - update-alternatives --set scalac /usr/local/scala/default/bin/scalac
-    - update-alternatives --set scalap /usr/local/scala/default/bin/scalap
+  command: "update-alternatives --set scala /usr/local/scala/default/bin/scala"
+  when: '"Best: /usr/local/scala/default/bin/scala" not in scala_alternatives.stdout'
+
+- name: Scala | Set the system default for Scalac
+  command: "update-alternatives --set scalac /usr/local/scala/default/bin/scalac"
+  when: '"Best: /usr/local/scala/default/bin/scalac" not in scalac_alternatives.stdout'
+
+- name: Scala | Set the system default for Scalap
+  command: "update-alternatives --set scalap /usr/local/scala/default/bin/scalap"
+  when: '"Best: /usr/local/scala/default/bin/scalap" not in scalap_alternatives.stdout'
