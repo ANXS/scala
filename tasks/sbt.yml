@@ -2,7 +2,7 @@
 
 - name: Scala | Download sbt
   get_url:
-    url: "http://repo.scala-sbt.org/scalasbt/sbt-native-packages/org/scala-sbt/sbt/{{scala_sbt_version}}/sbt.deb"
+    url: "http://dl.bintray.com/sbt/debian/sbt-{{scala_sbt_version}}.deb"
     dest: "/tmp/sbt-{{scala_sbt_version}}.deb"
 
 - name: Scala | Install sbt
