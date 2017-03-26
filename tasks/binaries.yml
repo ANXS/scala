@@ -4,7 +4,7 @@
   get_url:
     url: "http://www.scala-lang.org/files/archive/scala-{{item}}.tgz"
     dest: "/tmp/scala-{{item}}.tgz"
-  with_items: scala_versions
+  with_items: "{{scala_versions}}"
 
 - name: Scala | Make sure the directory to hold the Scala binaries is present
   file:
@@ -13,7 +13,7 @@
 
 - name: Scala | Unpack the compressed Scala binaries
   command: tar -xvzf /tmp/scala-{{item}}.tgz chdir=/usr/local/scala creates=/usr/local/scala/scala-{{item}}
-  with_items: scala_versions
+  with_items: "{{scala_versions}}"
 
 - name: Scala | Set the permissions on the Scala binaries
   file:
@@ -21,7 +21,7 @@
     state: directory
     mode: 0755
     recurse: yes
-  with_items: scala_versions
+  with_items: "{{scala_versions}}"
 
 - name: Scala | Update the symbolic link to the default Scala version
   file:
